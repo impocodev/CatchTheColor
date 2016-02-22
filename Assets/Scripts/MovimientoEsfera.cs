@@ -23,9 +23,9 @@ public class MovimientoEsfera : MonoBehaviour
 
     void FixedUpdate()
     {
-//        rigidbody.AddForce(new Vector3(Input.GetAxis("Horizontal"),
-//                                        0,
-//                                        Input.GetAxis("Vertical")) * forceValue);
+        rigidbody.AddForce(new Vector3(Input.GetAxis("Horizontal"),
+                                        0,
+                                        Input.GetAxis("Vertical")) * forceValue);
 		float movimientoX = Input.acceleration.x;
 		float movimientoY = Input.acceleration.y;
 
