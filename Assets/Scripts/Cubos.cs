@@ -9,6 +9,7 @@ public class Cubos : MonoBehaviour
     public float minX = -24.0f, maxX = 24.0f;
     public float minZ = -11.0f, maxZ = 11.0f;
     public float y = 0.5f;
+    float tiempo = 60.0f;
 
     private bool enableStones = true;
     private Rigidbody rigidbody;
@@ -17,11 +18,17 @@ public class Cubos : MonoBehaviour
     void Start()
     {
         StartCoroutine(CubosEnJuego());
+        StartCoroutine(CuentaAtras());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator CuentaAtras()
     {
+        while (tiempo > 0)
+        {
+            tiempo--;
+            GameManager.tiempoTranscurrido = tiempo;
+            yield return new WaitForSeconds(1);
+        }
     }
 
     IEnumerator CubosEnJuego()
