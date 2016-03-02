@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class ContadorPartida : MonoBehaviour
 {
-
     public Text Cubos_Lanzados;
     public Text Cubos_Destruidos;
 

@@ -19,8 +19,6 @@ public class Cubos : MonoBehaviour
         StartCoroutine(CubosEnJuego());
     }
 
-    // Update is called once per frame
-
     IEnumerator CubosEnJuego()
     {
         // Initial delay
@@ -32,41 +30,16 @@ public class Cubos : MonoBehaviour
 				GameObject cubo = (GameObject)Instantiate (cubos [Random.Range (0, cubos.Length)]);
 				cubo.transform.position = new Vector3 (Random.Range (minX, maxX), y, Random.Range (minZ, maxZ));
 				cubo.transform.rotation = Random.rotation;
-
-<<<<<<< HEAD
 				rigidbody = cubo.GetComponent<Rigidbody> ();
-
 				GameManager.cubosLanzados++;
 			} else {
 				GameObject cubo = (GameObject)Instantiate (cubos [Random.Range (0, 5)]);
 				cubo.transform.position = new Vector3 (Random.Range (minX, maxX), y, Random.Range (minZ, maxZ));
 				cubo.transform.rotation = Random.rotation;
-
-				rigidbody = cubo.GetComponent<Rigidbody> ();
-=======
-			if (RastreadorCubos.enableblanco) {
-				GameObject cubo = (GameObject)Instantiate (cubos [Random.Range (0, cubos.Length)]);
-				cubo.transform.position = new Vector3 (Random.Range (minX, maxX), y, Random.Range (minZ, maxZ));
-				cubo.transform.rotation = Random.rotation;
-
-				rigidbody = cubo.GetComponent<Rigidbody> ();
-
-				GameManager.cubosLanzados++;
-			} else {
-				GameObject cubo = (GameObject)Instantiate (cubos [Random.Range (0, 5)]);
-				cubo.transform.position = new Vector3 (Random.Range (minX, maxX), y, Random.Range (minZ, maxZ));
-				cubo.transform.rotation = Random.rotation;
-
 				rigidbody = cubo.GetComponent<Rigidbody> ();
 
 				GameManager.cubosLanzados++;
 			}
->>>>>>> Desarrollo
-
-				GameManager.cubosLanzados++;
-			}
-            
-		
             yield return new WaitForSeconds(Random.Range(minTiempoEntreCubos, maxTiempoEntreCubos));
 
         }
