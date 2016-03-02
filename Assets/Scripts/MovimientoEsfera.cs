@@ -23,6 +23,14 @@ public class MovimientoEsfera : MonoBehaviour
 
     void FixedUpdate()
     {
+<<<<<<< HEAD
+        rigidbody.AddForce(new Vector3(Input.GetAxis("Horizontal"),0, Input.GetAxis("Vertical")) * forceValue);
+		//float movimientoX = Input.acceleration.x;
+		//float movimientoY = Input.acceleration.y;
+
+		//Vector3 movimineto = new Vector3 (movimientoX, 0.0f, movimientoY);
+	//	GetComponent<Rigidbody> ().AddForce (movimineto * speed * Time.deltaTime);
+=======
         rigidbody.AddForce(new Vector3(Input.GetAxis("Horizontal"),
                                         0,
                                         Input.GetAxis("Vertical")) * forceValue);
@@ -31,6 +39,7 @@ public class MovimientoEsfera : MonoBehaviour
 
 		Vector3 movimineto = new Vector3 (movimientoX, 0.0f, movimientoY);
 		GetComponent<Rigidbody> ().AddForce (movimineto * speed * Time.deltaTime);
+>>>>>>> refs/remotes/origin/Oriol
 	
 
 		
