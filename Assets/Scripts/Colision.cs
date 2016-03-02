@@ -43,7 +43,6 @@ public class Colision : MonoBehaviour
                     esfera.tag = "b_Fucsia";
                     esfera.GetComponent<Renderer>().material.color = Color.magenta;
                     break;
-<<<<<<< HEAD
                 case "Blanco":
                 
                     Destroy(col.gameObject);
@@ -53,8 +52,6 @@ public class Colision : MonoBehaviour
                     esfera.tag = "b_Blanca";
                     esfera.GetComponent<Renderer>().material.color = Color.white;
                     break;
-=======
->>>>>>> Desarrollo
 
                 case "Verde":
                     Destroy(col.gameObject);
