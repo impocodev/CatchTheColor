@@ -84,6 +84,7 @@ public class Cubos : MonoBehaviour
 			}
             
 		
+       
             yield return new WaitForSeconds(Random.Range(minTiempoEntreCubos, maxTiempoEntreCubos));
 
         }

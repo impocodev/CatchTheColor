@@ -45,6 +45,7 @@ public class Colision : MonoBehaviour
                     break;
 <<<<<<< HEAD
                 case "Blanco":
+                
                     Destroy(col.gameObject);
                     Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
                     GameManager.cubosDestruidos++;
@@ -54,6 +55,7 @@ public class Colision : MonoBehaviour
                     break;
 =======
 >>>>>>> Desarrollo
+
                 case "Verde":
                     Destroy(col.gameObject);
                     Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
