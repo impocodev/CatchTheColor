@@ -11,7 +11,7 @@ public class Cubos : MonoBehaviour
     public float y = 0.5f;
 
     private bool enableStones = true;
-    private Rigidbody rigidbody;
+	private Rigidbody rigidbody;
 
     // Use this for initialization
     void Start()
@@ -20,9 +20,6 @@ public class Cubos : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-    }
 
     IEnumerator CubosEnJuego()
     {
@@ -31,15 +28,45 @@ public class Cubos : MonoBehaviour
 
         while (enableStones)
         {
+			if (RastreadorCubos.enableblanco) {
+				GameObject cubo = (GameObject)Instantiate (cubos [Random.Range (0, cubos.Length)]);
+				cubo.transform.position = new Vector3 (Random.Range (minX, maxX), y, Random.Range (minZ, maxZ));
+				cubo.transform.rotation = Random.rotation;
 
-            GameObject cubo = (GameObject)Instantiate(cubos[Random.Range(0, cubos.Length)]);
-            cubo.transform.position = new Vector3(Random.Range(minX, maxX), y, Random.Range(minZ, maxZ));
-            cubo.transform.rotation = Random.rotation;
+<<<<<<< HEAD
+				rigidbody = cubo.GetComponent<Rigidbody> ();
 
-            rigidbody = cubo.GetComponent<Rigidbody>();
+				GameManager.cubosLanzados++;
+			} else {
+				GameObject cubo = (GameObject)Instantiate (cubos [Random.Range (0, 5)]);
+				cubo.transform.position = new Vector3 (Random.Range (minX, maxX), y, Random.Range (minZ, maxZ));
+				cubo.transform.rotation = Random.rotation;
 
-            GameManager.cubosLanzados++;
+				rigidbody = cubo.GetComponent<Rigidbody> ();
+=======
+			if (RastreadorCubos.enableblanco) {
+				GameObject cubo = (GameObject)Instantiate (cubos [Random.Range (0, cubos.Length)]);
+				cubo.transform.position = new Vector3 (Random.Range (minX, maxX), y, Random.Range (minZ, maxZ));
+				cubo.transform.rotation = Random.rotation;
 
+				rigidbody = cubo.GetComponent<Rigidbody> ();
+
+				GameManager.cubosLanzados++;
+			} else {
+				GameObject cubo = (GameObject)Instantiate (cubos [Random.Range (0, 5)]);
+				cubo.transform.position = new Vector3 (Random.Range (minX, maxX), y, Random.Range (minZ, maxZ));
+				cubo.transform.rotation = Random.rotation;
+
+				rigidbody = cubo.GetComponent<Rigidbody> ();
+
+				GameManager.cubosLanzados++;
+			}
+>>>>>>> Desarrollo
+
+				GameManager.cubosLanzados++;
+			}
+            
+		
             yield return new WaitForSeconds(Random.Range(minTiempoEntreCubos, maxTiempoEntreCubos));
 
         }
