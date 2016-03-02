@@ -53,14 +53,6 @@ public class Colision : MonoBehaviour
                     esfera.GetComponent<Renderer>().material.color = Color.white;
                     break;
 =======
-		case "Blanco":
-			Destroy (col.gameObject);
-			Destroy (Instantiate (explosion, transform.position, Quaternion.identity), 3.3f);
-			GameManager.cubosDestruidos++;
-			RastreadorCubos.inBlanco--;
-                    	esfera.tag = "b_Blanca";
-                    	esfera.GetComponent<Renderer>().material.color = Color.white;
-                    	break;
 >>>>>>> Desarrollo
                 case "Verde":
                     Destroy(col.gameObject);
