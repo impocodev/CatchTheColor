@@ -43,7 +43,6 @@ public class Colision : MonoBehaviour
                     esfera.tag = "b_Fucsia";
                     esfera.GetComponent<Renderer>().material.color = Color.magenta;
                     break;
-                case "Blanco":
                     Destroy(col.gameObject);
                     Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
                     GameManager.cubosDestruidos++;
@@ -96,6 +95,7 @@ public class Colision : MonoBehaviour
                 Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
                 esfera.GetComponent<Renderer>().material.color = Color.white;
                 GameManager.cubosDestruidos++;
+				RastreadorCubos.inBlanco--;
             }
         }
     }

@@ -12,7 +12,7 @@ public class Cubos : MonoBehaviour
     float tiempo = 60.0f;
 
     private bool enableStones = true;
-    private Rigidbody rigidbody;
+	private Rigidbody rigidbody;
 
     // Use this for initialization
     void Start()
@@ -39,13 +39,23 @@ public class Cubos : MonoBehaviour
         while (enableStones)
         {
 
-            GameObject cubo = (GameObject)Instantiate(cubos[Random.Range(0, cubos.Length)]);
-            cubo.transform.position = new Vector3(Random.Range(minX, maxX), y, Random.Range(minZ, maxZ));
-            cubo.transform.rotation = Random.rotation;
+			if (RastreadorCubos.enableblanco) {
+				GameObject cubo = (GameObject)Instantiate (cubos [Random.Range (0, cubos.Length)]);
+				cubo.transform.position = new Vector3 (Random.Range (minX, maxX), y, Random.Range (minZ, maxZ));
+				cubo.transform.rotation = Random.rotation;
 
-            rigidbody = cubo.GetComponent<Rigidbody>();
+				rigidbody = cubo.GetComponent<Rigidbody> ();
 
-            GameManager.cubosLanzados++;
+				GameManager.cubosLanzados++;
+			} else {
+				GameObject cubo = (GameObject)Instantiate (cubos [Random.Range (0, 5)]);
+				cubo.transform.position = new Vector3 (Random.Range (minX, maxX), y, Random.Range (minZ, maxZ));
+				cubo.transform.rotation = Random.rotation;
+
+				rigidbody = cubo.GetComponent<Rigidbody> ();
+
+				GameManager.cubosLanzados++;
+			}
 
             yield return new WaitForSeconds(Random.Range(minTiempoEntreCubos, maxTiempoEntreCubos));
 
