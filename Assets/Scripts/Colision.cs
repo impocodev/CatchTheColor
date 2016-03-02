@@ -15,10 +15,10 @@ public class Colision : MonoBehaviour
         {
             switch (col.gameObject.tag)
             {
-                case "Amarillo":
-                    Destroy(col.gameObject);
-                    Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
-                    GameManager.cubosDestruidos++;
+				case "Amarillo":
+					Destroy (col.gameObject);
+					Destroy (Instantiate (explosion, transform.position, Quaternion.identity), 3.3f);
+					GameManager.cubosDestruidos++;
                     esfera.tag = "b_Amarilla";
                     esfera.GetComponent<Renderer>().material.color = Color.yellow;
                     break;
@@ -43,14 +43,16 @@ public class Colision : MonoBehaviour
                     esfera.tag = "b_Fucsia";
                     esfera.GetComponent<Renderer>().material.color = Color.magenta;
                     break;
-		case "Blanco":
-			Destroy (col.gameObject);
-			Destroy (Instantiate (explosion, transform.position, Quaternion.identity), 3.3f);
-			GameManager.cubosDestruidos++;
-			RastreadorCubos.inBlanco--;
-                    	esfera.tag = "b_Blanca";
-                    	esfera.GetComponent<Renderer>().material.color = Color.white;
-                    	break;
+                case "Blanco":
+                
+                    Destroy(col.gameObject);
+                    Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
+                    GameManager.cubosDestruidos++;
+					RastreadorCubos.inBlanco--;
+                    esfera.tag = "b_Blanca";
+                    esfera.GetComponent<Renderer>().material.color = Color.white;
+                    break;
+
                 case "Verde":
                     Destroy(col.gameObject);
                     Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
@@ -83,7 +85,7 @@ public class Colision : MonoBehaviour
             {
                 Destroy(col.gameObject);
                 Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
-                GameManager.cubosDestruidos++;
+				GameManager.cubosDestruidos++;
             }
             if (col.gameObject.tag == "Rojo" && esfera.tag == "b_Roja")
             {
