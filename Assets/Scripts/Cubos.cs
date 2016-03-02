@@ -22,7 +22,6 @@ public class Cubos : MonoBehaviour
 	}
 	IEnumerator CuentaAtras()
 	{
-		while (tiempo > 0)
 		{
 			tiempo--;
 			GameManager.tiempoTranscurrido = tiempo;
