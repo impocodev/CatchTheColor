@@ -7,7 +7,6 @@ public class ContadorPartida : MonoBehaviour
 
     public Text Cubos_Lanzados;
     public Text Cubos_Destruidos;
-    public Text Tiempo_Restante;
 
     // Use this for initialization
     void Start()
@@ -20,6 +19,5 @@ public class ContadorPartida : MonoBehaviour
     {
         Cubos_Lanzados.text = "Cubos totales: " + GameManager.cubosLanzados;
         Cubos_Destruidos.text = "Cubos eliminados: " + GameManager.cubosDestruidos;
-        Tiempo_Restante.text = "Tiempo restante: " + GameManager.tiempoTranscurrido;
     }
 }
