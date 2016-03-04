@@ -3,8 +3,7 @@ using System.Collections;
 
 public class Colision : MonoBehaviour
 {
-	public GameObject luz; //[Rubén] Define la luz de la bola
-	public GameObject explosion;
+    public GameObject explosion;
     public GameObject esfera = new GameObject();
     public GameObject suelo = new GameObject();
 
@@ -16,30 +15,19 @@ public class Colision : MonoBehaviour
         {
             switch (col.gameObject.tag)
             {
-<<<<<<< HEAD
 				case "Amarillo":
 					Destroy (col.gameObject);
 					Destroy (Instantiate (explosion, transform.position, Quaternion.identity), 3.3f);
 					GameManager.cubosDestruidos++;
                     esfera.tag = "b_Amarilla";
                     esfera.GetComponent<Renderer>().material.color = Color.yellow;
-=======
-			case "Amarillo":
-				Destroy (col.gameObject);
-				Destroy (Instantiate (explosion, transform.position, Quaternion.identity), 3.3f);
-				GameManager.cubosDestruidos++;
-				esfera.tag = "b_Amarilla";
-                esfera.GetComponent<Renderer>().material.color = Color.yellow;
-				luz.GetComponent<Light> ().color = Color.yellow;
->>>>>>> origin/Rubén
                     break;
                 case "Azul":
                     Destroy(col.gameObject);
                     Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
                     GameManager.cubosDestruidos++;
                     esfera.tag = "b_Azul";
-                    esfera.GetComponent<Renderer>().material.color = Color.cyan;
-					luz.GetComponent<Light> ().color = Color.cyan;
+                    esfera.GetComponent<Renderer>().material.color = Color.blue;
                     break;
                 case "Rojo":
                     Destroy(col.gameObject);
@@ -47,7 +35,6 @@ public class Colision : MonoBehaviour
                     GameManager.cubosDestruidos++;
                     esfera.tag = "b_Roja";
                     esfera.GetComponent<Renderer>().material.color = Color.red;
-					luz.GetComponent<Light> ().color = Color.red;
                     break;
                 case "Fucsia":
                     Destroy(col.gameObject);
@@ -55,21 +42,15 @@ public class Colision : MonoBehaviour
                     GameManager.cubosDestruidos++;
                     esfera.tag = "b_Fucsia";
                     esfera.GetComponent<Renderer>().material.color = Color.magenta;
-					luz.GetComponent<Light> ().color = Color.magenta;
                     break;
                 case "Blanco":
-<<<<<<< HEAD
                 
-=======
-					luz.GetComponent<Light> ().color = Color.white;
->>>>>>> origin/Rubén
                     Destroy(col.gameObject);
                     Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
                     GameManager.cubosDestruidos++;
 					RastreadorCubos.inBlanco--;
                     esfera.tag = "b_Blanca";
                     esfera.GetComponent<Renderer>().material.color = Color.white;
-					
                     break;
 
                 case "Verde":
@@ -78,7 +59,6 @@ public class Colision : MonoBehaviour
                     GameManager.cubosDestruidos++;
                     esfera.tag = "b_Verde";
                     esfera.GetComponent<Renderer>().material.color = Color.green;
-					luz.GetComponent<Light> ().color = Color.green;
                     break;
             }
         }
