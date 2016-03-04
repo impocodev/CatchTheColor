@@ -11,7 +11,7 @@ public class Cubos : MonoBehaviour
     public float y = 0.5f;
 	float tiempo = 60.0f;
 
-    private bool enableStones = true;
+    private bool lanzadorCubos = true;
 	private Rigidbody rigidbody;
 
     // Use this for initialization
@@ -36,7 +36,7 @@ public class Cubos : MonoBehaviour
         // Initial delay
         yield return new WaitForSeconds(2.0f);
 
-        while (enableStones)
+        while (lanzadorCubos)
         {
 
 			if (RastreadorCubos.enableblanco) 
