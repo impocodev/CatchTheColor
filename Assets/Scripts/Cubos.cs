@@ -11,12 +11,22 @@ public class Cubos : MonoBehaviour
     public float y = 0.5f;
 
     private bool enableStones = true;
-	private Rigidbody rigidbody;
+    private Rigidbody rigidbody;
 
     // Use this for initialization
     void Start()
     {
         StartCoroutine(CubosEnJuego());
+    }
+
+    IEnumerator CuentaAtras()
+    {
+        while (tiempo > 0)
+        {
+            tiempo--;
+            GameManager.tiempoTranscurrido = tiempo;
+            yield return new WaitForSeconds(1);
+        }
     }
 
     IEnumerator CubosEnJuego()
@@ -35,10 +45,10 @@ public class Cubos : MonoBehaviour
 			} else {
 				GameObject cubo = (GameObject)Instantiate (cubos [Random.Range (0, 5)]);
 				cubo.transform.position = new Vector3 (Random.Range (minX, maxX), y, Random.Range (minZ, maxZ));
-				cubo.transform.rotation = Random.rotation;
+            cubo.transform.rotation = Random.rotation;
 				rigidbody = cubo.GetComponent<Rigidbody> ();
 
-				GameManager.cubosLanzados++;
+            GameManager.cubosLanzados++;
 			}
             yield return new WaitForSeconds(Random.Range(minTiempoEntreCubos, maxTiempoEntreCubos));
 
