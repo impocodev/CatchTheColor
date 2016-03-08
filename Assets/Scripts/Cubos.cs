@@ -39,7 +39,7 @@ public class Cubos : MonoBehaviour
         while (lanzadorCubos)
         {
 
-			if (RastreadorCubos.enableblanco) 
+            if (RastreadorCubos.enableblanco) 
 			{
 				GameObject cubo = (GameObject)Instantiate (cubos [Random.Range (0, cubos.Length)]);
 				cubo.transform.position = new Vector3 (Random.Range (minX, maxX), y, Random.Range (minZ, maxZ));
