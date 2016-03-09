@@ -50,7 +50,6 @@ public class ModoSupervivencia : MonoBehaviour
                     gameObject.tag = "Blanco";
                     gameObject.GetComponent<Renderer>().material.color = Color.white;
                     break;
-
                 case "Verde":
                     Destroy(col.gameObject);
                     Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
@@ -61,40 +60,42 @@ public class ModoSupervivencia : MonoBehaviour
             }
         }
         else {
-            if(col.gameObject.tag == gameObject.tag)
+            if (col.gameObject.tag != gameObject.tag && col.gameObject.tag != "Suelo")
             {
-                if (col.gameObject.tag == "Amarillo" && gameObject.tag == "Amarillo")
-                {
-                    Destroy(col.gameObject);
-                    Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
-                    GameManager.cubosDestruidos++;
-                }
-                if (col.gameObject.tag == "Azul" && gameObject.tag == "Azul")
-                {
-                    Destroy(col.gameObject);
-                    Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
-                    GameManager.cubosDestruidos++;
-                }
-                if (col.gameObject.tag == "Verde" && gameObject.tag == "Verde")
-                {
-                    Destroy(col.gameObject);
-                    Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
-                    GameManager.cubosDestruidos++;
-                }
-                if (col.gameObject.tag == "Fucsia" && gameObject.tag == "Fucsia")
-                {
-                    Destroy(col.gameObject);
-                    Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
-                    GameManager.cubosDestruidos++;
-                }
-                if (col.gameObject.tag == "Rojo" && gameObject.tag == "Rojo")
-                {
-                    Destroy(col.gameObject);
-                    Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
-                    GameManager.cubosDestruidos++;
-                }
+                if (col.gameObject.tag != "Blanco")
+                    Application.LoadLevel("Final");
             }
-            if (col.gameObject.tag == "Blanco")
+            if (col.gameObject.tag == "Amarillo" && gameObject.tag == "Amarillo")
+            {
+                Destroy(col.gameObject);
+                Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
+                GameManager.cubosDestruidos++;
+            }
+            if (col.gameObject.tag == "Azul" && gameObject.tag == "Azul")
+            {
+                Destroy(col.gameObject);
+                Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
+                GameManager.cubosDestruidos++;
+            }
+            if (col.gameObject.tag == "Verde" && gameObject.tag == "Verde")
+            {
+                Destroy(col.gameObject);
+                Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
+                GameManager.cubosDestruidos++;
+            }
+            if (col.gameObject.tag == "Fucsia" && gameObject.tag == "Fucsia")
+            {
+                Destroy(col.gameObject);
+                Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
+                GameManager.cubosDestruidos++;
+            }
+            if (col.gameObject.tag == "Rojo" && gameObject.tag == "Rojo")
+            {
+                Destroy(col.gameObject);
+                Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
+                GameManager.cubosDestruidos++;
+            }
+            if (col.gameObject.tag == "Blanco" && gameObject.tag != "Blanco")
             {
                 Destroy(col.gameObject);
                 Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
