@@ -69,6 +69,7 @@ public class Cubos : MonoBehaviour
 		// Initial delay
 		yield return new WaitForSeconds (2.0f);
 
+<<<<<<< HEAD
 		while (lanzadorCubos) {
 			if (gameObject.transform.position.x < 0 && gameObject.transform.position.z > 0) {
 				//N0 = 1
@@ -82,6 +83,23 @@ public class Cubos : MonoBehaviour
 			}  else if (gameObject.transform.position.x > 0 && gameObject.transform.position.z < 0) {
 				//SE = 4
 				GameManager.posicion = 4;
+=======
+            if (RastreadorCubos.enableblanco) 
+			{
+				GameObject cubo = (GameObject)Instantiate (cubos [Random.Range (0, cubos.Length)]);
+				cubo.transform.position = new Vector3 (Random.Range (minX, maxX), y, Random.Range (minZ, maxZ));
+				cubo.transform.rotation = Random.rotation;
+				rigidbody = cubo.GetComponent<Rigidbody> ();
+				GameManager.cubosLanzados++;
+			} 
+			else 
+			{
+				GameObject cubo = (GameObject)Instantiate (cubos [Random.Range (0, 5)]);
+				cubo.transform.position = new Vector3 (Random.Range (minX, maxX), y, Random.Range (minZ, maxZ));
+				cubo.transform.rotation = Random.rotation;
+				rigidbody = cubo.GetComponent<Rigidbody> ();
+				GameManager.cubosLanzados++;
+>>>>>>> origin/Rodrigo
 			}
 			print ("posicion lanzador:" + GameManager.posicion);
 			ControlCubos.cubosPosicion ();
