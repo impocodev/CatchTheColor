@@ -132,3 +132,5 @@ obj/
 ehthumbs.db
 Thumbs.db
 Assets/Scripts/Cubos.cs
+
+Assets/Scripts/ControlCubos.cs
