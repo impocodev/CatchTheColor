@@ -46,12 +46,12 @@ public class Colision : MonoBehaviour
                     esfera.GetComponent<Renderer>().material.color = Color.magenta;
 				    GameManager.Fucsia--;
                     break;
-                case "Blanco":
-                    Destroy(col.gameObject);
-                    Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
-                    GameManager.cubosDestruidos++;
-                    esfera.tag = "b_Blanca";
-                    esfera.GetComponent<Renderer>().material.color = Color.white;
+			case "Blanco":
+					Destroy (col.gameObject);
+					Destroy (Instantiate (explosion, transform.position, Quaternion.identity), 3.3f);
+					GameManager.cubosDestruidos++;
+					esfera.tag = "b_Blanca";
+					esfera.GetComponent<Renderer> ().material.color = Color.white;
 					GameManager.Blanco--;
                     break;
                 case "Verde":
@@ -60,19 +60,18 @@ public class Colision : MonoBehaviour
                     GameManager.cubosDestruidos++;
                     esfera.tag = "b_Verde";
                     esfera.GetComponent<Renderer>().material.color = Color.green;
-				GameManager.Verde--;
+					GameManager.Verde--;
                     break;
             }
         }
         else 
-        {
-            if (col.gameObject.tag == "Amarillo" && esfera.tag == "b_Amarilla")
-            {
-                Destroy(col.gameObject);
-                Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
+		{
+			if (col.gameObject.tag == "Amarillo" && esfera.tag == "b_Amarilla") {
+				Destroy (col.gameObject);
+				Destroy (Instantiate (explosion, transform.position, Quaternion.identity), 3.3f);
 				GameManager.cubosDestruidos++;
 				GameManager.Amarillo--;
-            }
+			}
             if (col.gameObject.tag == "Azul" && esfera.tag == "b_Azul")
             {
                 Destroy(col.gameObject);
@@ -110,6 +109,8 @@ public class Colision : MonoBehaviour
                 GameManager.cubosDestruidos++;
 				GameManager.Blanco--;
             }
+
+
         }
     }
 }
