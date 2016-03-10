@@ -52,6 +52,7 @@ public class Cubos : MonoBehaviour
 <<<<<<< HEAD
 		while (lanzadorCubos) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			if (gameObject.transform.position.x < 0 && gameObject.transform.position.z > 0) {
 				//N0 = 1
 				GameManager.posicion = 1;
@@ -84,6 +85,8 @@ public class Cubos : MonoBehaviour
 			}
 			print ("posicion lanzador:" + GameManager.posicion);
 			ControlCubos.cubosPosicion ();
+=======
+>>>>>>> parent of 948a920... separando scripts
 =======
 >>>>>>> parent of 948a920... separando scripts
 			RaycastHit hit;
