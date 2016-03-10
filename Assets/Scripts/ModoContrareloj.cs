@@ -26,7 +26,10 @@ public class ModoContrareloj : MonoBehaviour
                     GameManager.cubosDestruidos++;
                     gameObject.tag = "Amarillo";
                     gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+<<<<<<< HEAD
 					GameManager.Amarillo--;
+=======
+>>>>>>> origin/Rodrigo
                     break;
                 case "Azul":
                     Destroy(col.gameObject);
@@ -34,7 +37,10 @@ public class ModoContrareloj : MonoBehaviour
                     GameManager.cubosDestruidos++;
                     gameObject.tag = "Azul";
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+<<<<<<< HEAD
 					GameManager.Azul--;
+=======
+>>>>>>> origin/Rodrigo
                     break;
                 case "Rojo":
                     Destroy(col.gameObject);
@@ -42,7 +48,10 @@ public class ModoContrareloj : MonoBehaviour
                     GameManager.cubosDestruidos++;
                     gameObject.tag = "Rojo";
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+<<<<<<< HEAD
 					GameManager.Rojo--;
+=======
+>>>>>>> origin/Rodrigo
                     break;
                 case "Fucsia":
                     Destroy(col.gameObject);
@@ -50,15 +59,24 @@ public class ModoContrareloj : MonoBehaviour
                     GameManager.cubosDestruidos++;
                     gameObject.tag = "Fucsia";
                     gameObject.GetComponent<Renderer>().material.color = Color.magenta;
+<<<<<<< HEAD
 					GameManager.Fucsia--;
+=======
+>>>>>>> origin/Rodrigo
                     break;
                 case "Blanco":
                     Destroy(col.gameObject);
                     Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
                     GameManager.cubosDestruidos++;
+<<<<<<< HEAD
                     gameObject.tag = "Blanco";
                     gameObject.GetComponent<Renderer>().material.color = Color.white;
 					GameManager.Blanco--;
+=======
+                    RastreadorCubos.inBlanco--;
+                    gameObject.tag = "Blanco";
+                    gameObject.GetComponent<Renderer>().material.color = Color.white;
+>>>>>>> origin/Rodrigo
                     break;
 
                 case "Verde":
@@ -67,7 +85,10 @@ public class ModoContrareloj : MonoBehaviour
                     GameManager.cubosDestruidos++;
                     gameObject.tag = "Verde";
                     gameObject.GetComponent<Renderer>().material.color = Color.green;
+<<<<<<< HEAD
 					GameManager.Verde--;
+=======
+>>>>>>> origin/Rodrigo
                     break;
             }
         }
@@ -79,36 +100,51 @@ public class ModoContrareloj : MonoBehaviour
                     Destroy(col.gameObject);
                     Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
                     GameManager.cubosDestruidos++;
+<<<<<<< HEAD
 					GameManager.Amarillo--;
+=======
+>>>>>>> origin/Rodrigo
                 }
                 if (col.gameObject.tag == "Azul" && gameObject.tag == "Azul")
                 {
                     Destroy(col.gameObject);
                     Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
                     GameManager.cubosDestruidos++;
+<<<<<<< HEAD
 					GameManager.Azul--;
 					
+=======
+>>>>>>> origin/Rodrigo
                 }
                 if (col.gameObject.tag == "Verde" && gameObject.tag == "Verde")
                 {
                     Destroy(col.gameObject);
                     Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
                     GameManager.cubosDestruidos++;
+<<<<<<< HEAD
 					GameManager.Verde--;
+=======
+>>>>>>> origin/Rodrigo
                 }
                 if (col.gameObject.tag == "Fucsia" && gameObject.tag == "Fucsia")
                 {
                     Destroy(col.gameObject);
                     Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
                     GameManager.cubosDestruidos++;
+<<<<<<< HEAD
 					GameManager.Fucsia--;
+=======
+>>>>>>> origin/Rodrigo
                 }
                 if (col.gameObject.tag == "Rojo" && gameObject.tag == "Rojo")
                 {
                     Destroy(col.gameObject);
                     Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
                     GameManager.cubosDestruidos++;
+<<<<<<< HEAD
 					GameManager.Rojo--;
+=======
+>>>>>>> origin/Rodrigo
                 }
             }
             if (col.gameObject.tag == "Blanco")
@@ -117,7 +153,11 @@ public class ModoContrareloj : MonoBehaviour
                 Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
                 gameObject.GetComponent<Renderer>().material.color = Color.white;
                 GameManager.cubosDestruidos++;
+<<<<<<< HEAD
 				GameManager.Blanco--;
+=======
+                RastreadorCubos.inBlanco--;
+>>>>>>> origin/Rodrigo
             }
         }
     }
