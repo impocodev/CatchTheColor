@@ -26,6 +26,7 @@ public class ModoContrareloj : MonoBehaviour
                     GameManager.cubosDestruidos++;
                     gameObject.tag = "Amarillo";
                     gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+					GameManager.Amarillo--;
                     break;
                 case "Azul":
                     Destroy(col.gameObject);
@@ -33,6 +34,7 @@ public class ModoContrareloj : MonoBehaviour
                     GameManager.cubosDestruidos++;
                     gameObject.tag = "Azul";
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
+					GameManager.Azul--;
                     break;
                 case "Rojo":
                     Destroy(col.gameObject);
@@ -40,6 +42,7 @@ public class ModoContrareloj : MonoBehaviour
                     GameManager.cubosDestruidos++;
                     gameObject.tag = "Rojo";
                     gameObject.GetComponent<Renderer>().material.color = Color.red;
+					GameManager.Rojo--;
                     break;
                 case "Fucsia":
                     Destroy(col.gameObject);
@@ -47,14 +50,15 @@ public class ModoContrareloj : MonoBehaviour
                     GameManager.cubosDestruidos++;
                     gameObject.tag = "Fucsia";
                     gameObject.GetComponent<Renderer>().material.color = Color.magenta;
+					GameManager.Fucsia--;
                     break;
                 case "Blanco":
                     Destroy(col.gameObject);
                     Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
                     GameManager.cubosDestruidos++;
-                    RastreadorCubos.inBlanco--;
                     gameObject.tag = "Blanco";
                     gameObject.GetComponent<Renderer>().material.color = Color.white;
+					GameManager.Blanco--;
                     break;
 
                 case "Verde":
@@ -63,6 +67,7 @@ public class ModoContrareloj : MonoBehaviour
                     GameManager.cubosDestruidos++;
                     gameObject.tag = "Verde";
                     gameObject.GetComponent<Renderer>().material.color = Color.green;
+					GameManager.Verde--;
                     break;
             }
         }
@@ -74,30 +79,36 @@ public class ModoContrareloj : MonoBehaviour
                     Destroy(col.gameObject);
                     Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
                     GameManager.cubosDestruidos++;
+					GameManager.Amarillo--;
                 }
                 if (col.gameObject.tag == "Azul" && gameObject.tag == "Azul")
                 {
                     Destroy(col.gameObject);
                     Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
                     GameManager.cubosDestruidos++;
+					GameManager.Azul--;
+					
                 }
                 if (col.gameObject.tag == "Verde" && gameObject.tag == "Verde")
                 {
                     Destroy(col.gameObject);
                     Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
                     GameManager.cubosDestruidos++;
+					GameManager.Verde--;
                 }
                 if (col.gameObject.tag == "Fucsia" && gameObject.tag == "Fucsia")
                 {
                     Destroy(col.gameObject);
                     Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
                     GameManager.cubosDestruidos++;
+					GameManager.Fucsia--;
                 }
                 if (col.gameObject.tag == "Rojo" && gameObject.tag == "Rojo")
                 {
                     Destroy(col.gameObject);
                     Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
                     GameManager.cubosDestruidos++;
+					GameManager.Rojo--;
                 }
             }
             if (col.gameObject.tag == "Blanco")
@@ -106,7 +117,7 @@ public class ModoContrareloj : MonoBehaviour
                 Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 3.3f);
                 gameObject.GetComponent<Renderer>().material.color = Color.white;
                 GameManager.cubosDestruidos++;
-                RastreadorCubos.inBlanco--;
+				GameManager.Blanco--;
             }
         }
     }
