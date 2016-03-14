@@ -16,6 +16,7 @@
 	static public bool enableVerde = true;
 	static public bool enableBlanco = true;
 
+
 	//oriol. contador cubos en juego.
 	static public int Rojo = 0;
 	static public int Amarillo = 0;
@@ -31,6 +32,7 @@
 	static public int lastFucsia = 0;
 	static public int lastVerde = 0;
 	static public int lastBlanco = 0;
+	static public int posicionBola = 0;
 	//posicion del lanzador.
 	static public int posicion = 0;
 
