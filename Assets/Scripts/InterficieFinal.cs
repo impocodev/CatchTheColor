@@ -14,8 +14,8 @@ public class InterficieFinal : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        textThrown.text = "Cubos lanzados: " + GameManager.cubosLanzados;
-        textDestroyed.text = "Cubos destruidos: " + GameManager.cubosDestruidos;
+        textThrown.text = "" + GameManager.cubosLanzados;
+        textDestroyed.text = "" + GameManager.cubosDestruidos;
     }
 
     public void InicioJuego ()    {

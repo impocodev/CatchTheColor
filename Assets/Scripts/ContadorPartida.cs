@@ -18,8 +18,8 @@ public class ContadorPartida : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Cubos_Lanzados.text = "Cubos totales: " + GameManager.cubosLanzados;
-        Cubos_Destruidos.text = "Cubos eliminados: " + GameManager.cubosDestruidos;
-		Tiempo_Restante.text = "Tiempo restante: " + GameManager.tiempoTranscurrido;
+        Cubos_Lanzados.text = "" + GameManager.cubosLanzados;
+        Cubos_Destruidos.text = "" + GameManager.cubosDestruidos;
+		Tiempo_Restante.text = "" + GameManager.tiempoTranscurrido;
     }
 }
