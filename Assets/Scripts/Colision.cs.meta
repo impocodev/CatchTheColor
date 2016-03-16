@@ -1,12 +1,10 @@
 fileFormatVersion: 2
-guid: 24f71b53f38e79b4d98622de112200a4
-timeCreated: 1455660641
+guid: 0538b0dae568c4d3daa2fb3a8d3be420
+timeCreated: 1457642981
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences:
-  - esfera: {fileID: 133052, guid: 0f8f0035aca31f34e9120f4181fac1b6, type: 2}
-  - suelo: {fileID: 156316, guid: d911b442faecf43479afb5a4691e4e3d, type: 2}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

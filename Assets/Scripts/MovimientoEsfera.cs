@@ -18,7 +18,19 @@ public class MovimientoEsfera : MonoBehaviour
     // Función llamada una vez por frame.
     void Update()
     {
-
+		if (transform.position.x < 0 && transform.position.z > 0) {
+			//N0 = 1
+			GameManager.posicionBola = 1;
+		} else if (transform.position.x > 0 && transform.position.z > 0) {
+			//NE = 2
+			GameManager.posicionBola = 2;
+		} else if (transform.position.x < 0 && transform.position.z < 0) {
+			//SO = 3
+			GameManager.posicionBola = 3;
+		} else if (transform.position.x > 0 && transform.position.z < 0) {
+			//SE = 4
+			GameManager.posicionBola = 4;
+		}
     }
 
     void FixedUpdate()
