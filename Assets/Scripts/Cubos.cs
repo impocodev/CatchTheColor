@@ -33,24 +33,24 @@ public class Cubos : MonoBehaviour {
 		yield return new WaitForSeconds (2.0f);
 
 		while (lanzadorCubos) {
-			if (transform.position.x < 0 && transform.position.z > 0) {
+			if (gameObject.transform.position.x < 0 && gameObject.transform.position.z > 0) {
 				//N0 = 1
 				GameManager.posicion = 1;
-			} else if (transform.position.x > 0 && transform.position.z > 0) {
+			} else if (gameObject.transform.position.x > 0 && gameObject.transform.position.z > 0) {
 				//NE = 2
 				GameManager.posicion = 2;
-			} else if (transform.position.x < 0 && transform.position.z < 0) {
+			} else if (gameObject.transform.position.x < 0 && gameObject.transform.position.z < 0) {
 				//SO = 3
 				GameManager.posicion = 3;
-			} else if (transform.position.x > 0 && transform.position.z < 0) {
+			} else if (gameObject.transform.position.x > 0 && gameObject.transform.position.z < 0) {
 				//SE = 4
 				GameManager.posicion = 4;
-			}  
+			}
             print ("posicion lanzador:" + GameManager.posicion);
 			ControlCubos.cubosPosicion ();
 			RaycastHit hit;
 			Ray rayo = new Ray (transform.position, Vector3.down);
-			if (Physics.SphereCast (rayo,2.0f, out hit, 30.0f)) {
+			if (Physics.SphereCast (rayo,1.0f, out hit, 30.0f)) {
 				if (hit.collider.tag == "Respawn") {
 						GameObject cubo = (GameObject)Instantiate (ControlCubos.listaCubos [Random.Range (0, ControlCubos.listaCubos.Count)]);
 						cubo.transform.position = new Vector3 (transform.position.x, y, transform.position.z);
