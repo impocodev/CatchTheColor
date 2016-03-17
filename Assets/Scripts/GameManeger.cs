@@ -22,7 +22,7 @@
 	static public int Azul = 0;
 	static public int Fucsia = 0;
 	static public int Verde = 0;
-	static public int Blanco = 0;
+	static public int Blanco;
 
 	//oriol. marca cuadrante, NO=1 , NE=2 , SO=3 , SE=4
 	static public int lastRojo = 0;
@@ -31,8 +31,13 @@
 	static public int lastFucsia = 0;
 	static public int lastVerde = 0;
 	static public int lastBlanco = 0;
-	//posicion del lanzador.
+
+	//oriol. posicion del lanzador.
 	static public int posicion = 0;
+
+	//oriol. posicion bola.
+	static public int posicionBola = 0;
+
 
 }
 

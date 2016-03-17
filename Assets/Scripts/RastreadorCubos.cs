@@ -4,12 +4,13 @@ using System.Collections;
 public class RastreadorCubos : MonoBehaviour {
 
 
-void Update () {
+void FixedUpdate () {
 		if (GameManager.Blanco >= GameManager.full) {
 			GameManager.enableBlanco = false;
-		} else {
-			GameManager.enableBlanco = true;
-		}
+		} 
+//			else {
+//			GameManager.enableBlanco = true;
+//		}
 
 
 	}
@@ -20,16 +21,16 @@ void Update () {
 		case "Amarillo":
 				GameManager.Amarillo++;// añade 1 al contador.
 				GameManager.enableAmarillo = false;// desactiva el cubo en cuenstion, y evita que se repita la ejecucion del mismo color.
-				if (transform.position.x < 0 && transform.position.z > 0) {
+				if (col.transform.position.x < 0 && col.transform.position.z > 0) {
 					//N0 = 1
 					GameManager.lastAmarillo = 1;
-				} else if (transform.position.x > 0 && transform.position.z > 0) {
+				} else if (col.transform.position.x > 0 && col.transform.position.z > 0) {
 					//NE = 2
 					GameManager.lastAmarillo = 2;
-				} else if (transform.position.x < 0 && transform.position.z < 0) {
+				} else if (col.transform.position.x < 0 && col.transform.position.z < 0) {
 					//SO = 3
 					GameManager.lastAmarillo = 3;
-				} else if (transform.position.x > 0 && transform.position.z < 0) {
+				} else if (col.transform.position.x > 0 && col.transform.position.z < 0) {
 					//SE = 4
 					GameManager.lastAmarillo = 4;
 				}
@@ -38,16 +39,16 @@ void Update () {
 		case "Rojo":
 				GameManager.Rojo++;
 				GameManager.enableRojo = false;
-				if (transform.position.x < 0 && transform.position.z > 0) {
+				if (col.transform.position.x < 0 && col.transform.position.z > 0) {
 					//N0 = 1
 					GameManager.lastRojo = 1;
-				} else if (transform.position.x > 0 && transform.position.z > 0) {
+				} else if (col.transform.position.x > 0 && col.transform.position.z > 0) {
 					//NE = 2
 					GameManager.lastRojo = 2;
-				} else if (transform.position.x < 0 && transform.position.z < 0) {
+				} else if (col.transform.position.x < 0 && col.transform.position.z < 0) {
 					//SO = 3
 					GameManager.lastRojo = 3;
-				}  else if (transform.position.x > 0 && transform.position.z < 0) {
+				}  else if (col.transform.position.x > 0 && col.transform.position.z < 0) {
 					//SE = 4
 					GameManager.lastRojo = 4;
 				}
@@ -56,16 +57,16 @@ void Update () {
 			case "Azul":
 				GameManager.Azul++;
 				GameManager.enableAzul = false;
-				if (transform.position.x < 0 && transform.position.z > 0) {
+				if (col.transform.position.x < 0 && col.transform.position.z > 0) {
 					//N0 = 1
 					GameManager.lastAzul = 1;
-				} else if (transform.position.x > 0 && transform.position.z > 0) {
+				} else if (col.transform.position.x > 0 && col.transform.position.z > 0) {
 					//NE = 2
 					GameManager.lastAzul = 2;
-				} else if (transform.position.x < 0 && transform.position.z < 0) {
+				} else if (col.transform.position.x < 0 && col.transform.position.z < 0) {
 					//SO = 3
 					GameManager.lastAzul = 3;
-				}  else if (transform.position.x > 0 && transform.position.z < 0) {
+				}  else if (col.transform.position.x > 0 && col.transform.position.z < 0) {
 					//SE = 4
 					GameManager.lastAzul = 4;
 				}
@@ -74,16 +75,16 @@ void Update () {
 			case "Fucsia":
 				GameManager.Fucsia++;
 				GameManager.enableFucsia = false;
-				if (transform.position.x < 0 && transform.position.z > 0) {
-					//N0 = 1
+				if (col.transform.position.x < 0 && col.transform.position.z > 0) {
+						//N0 = 1
 					GameManager.lastFucsia = 1;
-				} else if (transform.position.x > 0 && transform.position.z > 0) {
+				} else if (col.transform.position.x > 0 && col.transform.position.z > 0) {
 					//NE = 2
 					GameManager.lastFucsia = 2;
-				} else if (transform.position.x < 0 && transform.position.z < 0) {
+				} else if (col.transform.position.x < 0 && col.transform.position.z < 0) {
 					//SO = 3
 					GameManager.lastFucsia = 3;
-				}  else if (transform.position.x > 0 && transform.position.z < 0) {
+				}  else if (col.transform.position.x > 0 && col.transform.position.z < 0) {
 					//SE = 4
 					GameManager.lastFucsia = 4;
 				}
@@ -92,16 +93,16 @@ void Update () {
 			case "Verde":
 				GameManager.Verde++;
 				GameManager.enableVerde = false;
-				if (transform.position.x < 0 && transform.position.z > 0) {
+				if (col.transform.position.x < 0 && col.transform.position.z > 0) {
 					//N0 = 1
 					GameManager.lastVerde = 1;
-				} else if (transform.position.x > 0 && transform.position.z > 0) {
+				} else if (col.transform.position.x > 0 && col.transform.position.z > 0) {
 					//NE = 2
 					GameManager.lastVerde = 2;
-				} else if (transform.position.x < 0 && transform.position.z < 0) {
+				} else if (col.transform.position.x < 0 && col.transform.position.z < 0) {
 					//SO = 3
 					GameManager.lastVerde = 3;
-				}  else if (transform.position.x > 0 && transform.position.z < 0) {
+				}  else if (col.transform.position.x > 0 && col.transform.position.z < 0) {
 					//SE = 4
 					GameManager.lastVerde = 4;
 				}
@@ -110,16 +111,16 @@ void Update () {
 			case "Blanco":
 				GameManager.Blanco++;
 				GameManager.enableBlanco = false;
-				if (transform.position.x < 0 && transform.position.z > 0) {
+				if (col.transform.position.x < 0 && col.transform.position.z > 0) {
 					//N0 = 1
 					GameManager.lastBlanco = 1;
-				} else if (transform.position.x > 0 && transform.position.z > 0) {
+				} else if (col.transform.position.x > 0 && col.transform.position.z > 0) {
 					//NE = 2
 					GameManager.lastBlanco = 2;
-				} else if (transform.position.x < 0 && transform.position.z < 0) {
+				} else if (col.transform.position.x < 0 && col.transform.position.z < 0) {
 					//SO = 3
 					GameManager.lastBlanco = 3;
-				}  else if (transform.position.x > 0 && transform.position.z < 0) {
+				}  else if (col.transform.position.x > 0 && col.transform.position.z < 0) {
 					//SE = 4
 					GameManager.lastBlanco = 4;
 				}

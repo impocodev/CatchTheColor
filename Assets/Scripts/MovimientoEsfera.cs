@@ -16,10 +16,9 @@ public class MovimientoEsfera : MonoBehaviour
     }
 
     // Función llamada una vez por frame.
-    void Update()
-    {
-
-    }
+	void Update() {
+		
+	}
 
     void FixedUpdate()
     {
@@ -32,7 +31,18 @@ public class MovimientoEsfera : MonoBehaviour
 		Vector3 movimineto = new Vector3 (movimientoX, 0.0f, movimientoY);
 		GetComponent<Rigidbody> ().AddForce (movimineto * speed * Time.deltaTime);
 	
-
-		
+		if (gameObject.transform.position.x < 0 && gameObject.transform.position.z > 0) {
+			//N0 = 1
+			GameManager.posicionBola = 1;
+		} else if (gameObject.transform.position.x > 0 && gameObject.transform.position.z > 0) {
+			//NE = 2
+			GameManager.posicionBola = 2;
+		} else if (gameObject.transform.position.x < 0 && gameObject.transform.position.z < 0) {
+			//SO = 3
+			GameManager.posicionBola = 3;
+		} else if (gameObject.transform.position.x > 0 && gameObject.transform.position.z < 0) {
+			//SE = 4
+			GameManager.posicionBola = 4;
+		}
     }
 }
