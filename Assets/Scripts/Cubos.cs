@@ -54,7 +54,7 @@ public class Cubos : MonoBehaviour {
 				if (hit.collider.tag == "Respawn") {
 						GameObject cubo = (GameObject)Instantiate (ControlCubos.listaCubos [Random.Range (0, ControlCubos.listaCubos.Count)]);
 						cubo.transform.position = new Vector3 (transform.position.x, y, transform.position.z);
-						cubo.transform.rotation = Random.rotation;
+						//cubo.transform.rotation = Random.rotation;
 						rigidbody = cubo.GetComponent<Rigidbody> ();
 						GameManager.cubosLanzados++;
 						gameObject.transform.position = new Vector3 (Random.Range (minX, maxX), 25, Random.Range (minZ, maxZ));

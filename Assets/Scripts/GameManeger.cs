@@ -1,4 +1,8 @@
-﻿public static class GameManager
+﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.SceneManagement;
+
+public static class GameManager
 {
 
    public static int cubosLanzados = 0;

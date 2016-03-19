@@ -17,8 +17,8 @@ public class ModoContrareloj : MonoBehaviour
 	}
     public void Update()
     {
-        if (GameManager.tiempoTranscurrido == 0)
-            Application.LoadLevel("Final");
+       /* if (GameManager.tiempoTranscurrido == 0)
+            Application.LoadLevel("Final");*/
     }
     void OnCollisionEnter(Collision col)
     {
