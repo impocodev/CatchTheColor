@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class Cubos : MonoBehaviour {
 
 	public GameObject cuboBlanco;
+	public GameObject bola;
     
 	public float minTiempoEntreCubos = 1.0f, maxTiempoEntreCubos = 1.5f;
     public float minX = -24.0f, maxX = 24.0f;
@@ -15,6 +16,7 @@ public class Cubos : MonoBehaviour {
     private bool lanzadorCubos = true;
     // Use this for initialization
     void Start() {
+		Instantiate (bola, new Vector3 (0.0f,0.5f,0.0f), Quaternion.identity);
 		gameObject.transform.position = new Vector3 (Random.Range (minX, maxX), 25, Random.Range (minZ, maxZ));
         StartCoroutine(CubosEnJuego());
 		StartCoroutine(CuentaAtras());
