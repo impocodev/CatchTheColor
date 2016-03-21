@@ -13,8 +13,6 @@ public class Cubos : MonoBehaviour {
 	float tiempo = 60.0f;
 
     private bool lanzadorCubos = true;
-	private Rigidbody rigidbody;
-
     // Use this for initialization
     void Start() {
 		gameObject.transform.position = new Vector3 (Random.Range (minX, maxX), 25, Random.Range (minZ, maxZ));
@@ -28,7 +26,6 @@ public class Cubos : MonoBehaviour {
 					GameObject cubo = (GameObject)Instantiate (ControlCubos.listaCubos [Random.Range (0, ControlCubos.listaCubos.Count)]);
 					cubo.transform.position = new Vector3 (transform.position.x, y, transform.position.z);
 					cubo.transform.rotation = Random.rotation;
-					rigidbody = cubo.GetComponent<Rigidbody> ();
 					GameManager.cubosLanzados++;
 					gameObject.transform.position = new Vector3 (Random.Range (minX, maxX), 25, Random.Range (minZ, maxZ));
 					ControlCubos.listaCubos.Clear();//oriol. la lista de cubos se vacia.
@@ -77,7 +74,6 @@ public class Cubos : MonoBehaviour {
 						GameObject cubo = (GameObject)Instantiate (ControlCubos.listaCubos [Random.Range (0, ControlCubos.listaCubos.Count)]);
 						cubo.transform.position = new Vector3 (transform.position.x, y, transform.position.z);
 						cubo.transform.rotation = Random.rotation;
-						rigidbody = cubo.GetComponent<Rigidbody> ();
 						GameManager.cubosLanzados++;
 						gameObject.transform.position = new Vector3 (Random.Range (minX, maxX), 25, Random.Range (minZ, maxZ));
 						ControlCubos.listaCubos.Clear();//oriol. la lista de cubos se vacia.
@@ -86,7 +82,6 @@ public class Cubos : MonoBehaviour {
 						GameObject cubo = (GameObject)Instantiate (cuboBlanco);
 						cubo.transform.position = new Vector3 (transform.position.x, y, transform.position.z);
 						cubo.transform.rotation = Random.rotation;
-						rigidbody = cubo.GetComponent<Rigidbody> ();
 						GameManager.cubosLanzados++;
 						gameObject.transform.position = new Vector3 (Random.Range (minX, maxX), 25, Random.Range (minZ, maxZ));
 						ControlCubos.listaCubos.Clear();//oriol. la lista de cubos se vacia.

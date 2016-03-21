@@ -8,11 +8,6 @@ void FixedUpdate () {
 		if (GameManager.Blanco >= GameManager.full) {
 			GameManager.enableBlanco = false;
 		} 
-//			else {
-//			GameManager.enableBlanco = true;
-//		}
-
-
 	}
 	//oriol.  encolision con trigger.
 	void OnTriggerEnter (Collider col){

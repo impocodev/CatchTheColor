@@ -4,11 +4,11 @@ using System.Collections;
 public class scriptAudio : MonoBehaviour {
 	//public int startingPitch = 10;
 	//public int timeToDecrease = 10;
-	AudioSource audio;
+	AudioSource sonido;
 
 	void Start() {
-		audio = GetComponent<AudioSource>();
-		audio.pitch = Random.Range(1,2.5f);
+		sonido = GetComponent<AudioSource>();
+		sonido.pitch = Random.Range(1,2.5f);
 	}
 
 	//void Update() {

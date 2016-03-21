@@ -5,24 +5,17 @@ public class MovimientoEsfera : MonoBehaviour
 {
 
     public float forceValue;
-    private Rigidbody rigidbody;
+    private Rigidbody fisica;
 
 	float speed = 1000.0f;
     // Función que se ejecuta en el inicio.
-    void Start()
-    {
-        rigidbody = GetComponent<Rigidbody>();
+    void Start(){
+        fisica = GetComponent<Rigidbody>();
 		Screen.orientation = ScreenOrientation.LandscapeLeft;
     }
 
-    // Función llamada una vez por frame.
-	void Update() {
-		
-	}
-
-    void FixedUpdate()
-    {
-        rigidbody.AddForce(new Vector3(Input.GetAxis("Horizontal"),
+    void FixedUpdate(){
+        fisica.AddForce(new Vector3(Input.GetAxis("Horizontal"),
                                         0,
                                         Input.GetAxis("Vertical")) * forceValue);
 		float movimientoX = Input.acceleration.x;

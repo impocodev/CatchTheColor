@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class InterficieFinal : MonoBehaviour {
 
@@ -19,6 +20,6 @@ public class InterficieFinal : MonoBehaviour {
     }
 
     public void InicioJuego ()    {
-        Application.LoadLevel("Inicio");
+		SceneManager.LoadScene ("Inicio");
     }
 }

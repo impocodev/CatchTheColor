@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class InterficieInicio : MonoBehaviour {
 
@@ -16,11 +17,11 @@ public class InterficieInicio : MonoBehaviour {
 	}
 
     public void Contrareloj ()    {
-        Application.LoadLevel("Modo_Contrareloj");
+		SceneManager.LoadScene ("Modo_Contrareloj");
     }
 
     public void Supervivencia()
     {
-        Application.LoadLevel("Modo_Supervivencia");
+		SceneManager.LoadScene ("Modo_Supervivencia");
     }
 }

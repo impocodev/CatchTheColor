@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ModoSupervivencia : MonoBehaviour
 {
@@ -7,11 +8,11 @@ public class ModoSupervivencia : MonoBehaviour
     public GameObject esfera = new GameObject();
 	public AudioClip puntoAudio;
 	TrailRenderer trazo;
-	AudioSource audio;
+	AudioSource sonido;
 
 	void Start(){
 		trazo = GetComponent<TrailRenderer> ();
-		audio = GetComponent<AudioSource> ();
+		sonido = GetComponent<AudioSource> ();
 	}
 
     void OnCollisionEnter(Collision col)
@@ -29,7 +30,7 @@ public class ModoSupervivencia : MonoBehaviour
 					GameManager.Amarillo--;
 					scriptShake.shaking = true;
 					trazo.material.color = Color.yellow;
-					audio.PlayOneShot (puntoAudio, 1F);//Rubén
+					sonido.PlayOneShot (puntoAudio, 1F);//Rubén
 					break;
 				case "Azul":
 					Destroy(col.gameObject);
@@ -40,7 +41,7 @@ public class ModoSupervivencia : MonoBehaviour
 					GameManager.Azul--;
 					trazo.material.color = Color.cyan;
 					scriptShake.shaking = true;
-					audio.PlayOneShot (puntoAudio, 1F);//Rubén
+					sonido.PlayOneShot (puntoAudio, 1F);//Rubén
 					break;
 				case "Rojo":
 					Destroy(col.gameObject);
@@ -51,7 +52,7 @@ public class ModoSupervivencia : MonoBehaviour
 					GameManager.Rojo--;
 					scriptShake.shaking = true;
 					trazo.material.color = Color.red;
-					audio.PlayOneShot (puntoAudio, 1F);//Rubén
+					sonido.PlayOneShot (puntoAudio, 1F);//Rubén
 					break;
 				case "Fucsia":
 					Destroy(col.gameObject);
@@ -62,7 +63,7 @@ public class ModoSupervivencia : MonoBehaviour
 					GameManager.Fucsia--;
 					scriptShake.shaking = true;
 					trazo.material.color = Color.magenta;
-					audio.PlayOneShot (puntoAudio, 1F);//Rubén
+					sonido.PlayOneShot (puntoAudio, 1F);//Rubén
 					break;
 				case "Blanco":
 					Destroy(col.gameObject);
@@ -73,7 +74,7 @@ public class ModoSupervivencia : MonoBehaviour
 					GameManager.Blanco--;
 					scriptShake.shaking = true;
 					trazo.material.color = Color.white;
-					audio.PlayOneShot (puntoAudio, 1F);//Rubén
+					sonido.PlayOneShot (puntoAudio, 1F);//Rubén
 					break;
 				case "Verde":
 					Destroy(col.gameObject);
@@ -84,13 +85,13 @@ public class ModoSupervivencia : MonoBehaviour
 					GameManager.Verde--;
 					scriptShake.shaking = true;
 					trazo.material.color = Color.green;
-					audio.PlayOneShot (puntoAudio, 1F);//Rubén
+					sonido.PlayOneShot (puntoAudio, 1F);//Rubén
 					break;
 			}
 		} else {
 			if (col.gameObject.tag != gameObject.tag && col.gameObject.tag != "Suelo") {
 				if (col.gameObject.tag != "Blanco") {
-						Application.LoadLevel("Final");
+						SceneManager.LoadScene("Final");
 				}
 			}
 			if (col.gameObject.tag == "Amarillo" && gameObject.tag == "Amarillo") {
@@ -100,7 +101,7 @@ public class ModoSupervivencia : MonoBehaviour
 				GameManager.Amarillo--;
 				scriptShake.shaking = true;
 				trazo.material.color = Color.yellow;
-				audio.PlayOneShot (puntoAudio, 1F);//Rubén
+				sonido.PlayOneShot (puntoAudio, 1F);//Rubén
 			}
 			if (col.gameObject.tag == "Azul" && gameObject.tag == "Azul") {
 				Destroy(col.gameObject);
@@ -109,7 +110,7 @@ public class ModoSupervivencia : MonoBehaviour
 				GameManager.Azul--;
 				scriptShake.shaking = true;
 				trazo.material.color = Color.cyan;
-				audio.PlayOneShot (puntoAudio, 1F);//Rubén
+				sonido.PlayOneShot (puntoAudio, 1F);//Rubén
 			}
 			if (col.gameObject.tag == "Verde" && gameObject.tag == "Verde") {
 				Destroy(col.gameObject);
@@ -118,7 +119,7 @@ public class ModoSupervivencia : MonoBehaviour
 				GameManager.Verde--;
 				scriptShake.shaking = true;
 				trazo.material.color = Color.green;
-				audio.PlayOneShot (puntoAudio, 1F);//Rubén
+				sonido.PlayOneShot (puntoAudio, 1F);//Rubén
 			}
 			if (col.gameObject.tag == "Fucsia" && gameObject.tag == "Fucsia") {
 				Destroy(col.gameObject);
@@ -127,7 +128,7 @@ public class ModoSupervivencia : MonoBehaviour
 				GameManager.Fucsia--;
 				scriptShake.shaking = true;
 				trazo.material.color = Color.magenta;
-				audio.PlayOneShot (puntoAudio, 1F);//Rubén
+				sonido.PlayOneShot (puntoAudio, 1F);//Rubén
 			}
 			if (col.gameObject.tag == "Rojo" && gameObject.tag == "Rojo") {
 				Destroy(col.gameObject);
@@ -136,7 +137,7 @@ public class ModoSupervivencia : MonoBehaviour
 				GameManager.Rojo--;
 				scriptShake.shaking = true;
 				trazo.material.color = Color.red;
-				audio.PlayOneShot (puntoAudio, 1F);//Rubén
+				sonido.PlayOneShot (puntoAudio, 1F);//Rubén
 			}
 			if (col.gameObject.tag == "Blanco" && gameObject.tag == "Blanco") {
 				Destroy(col.gameObject);
@@ -146,7 +147,7 @@ public class ModoSupervivencia : MonoBehaviour
 				GameManager.Blanco--;
 				scriptShake.shaking = true;
 				trazo.material.color = Color.white;
-				audio.PlayOneShot (puntoAudio, 1F);//Rubén
+				sonido.PlayOneShot (puntoAudio, 1F);//Rubén
 			}
 		}   
     }

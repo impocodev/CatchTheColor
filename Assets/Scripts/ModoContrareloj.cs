@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ModoContrareloj : MonoBehaviour
 {
@@ -8,17 +9,17 @@ public class ModoContrareloj : MonoBehaviour
     public GameObject suelo = new GameObject();
 	public AudioClip puntoAudio;
 	TrailRenderer trazo;
-	AudioSource audio;
+	AudioSource sonido;
 
 
 	void Start(){
 		trazo = GetComponent<TrailRenderer> ();
-		audio = GetComponent<AudioSource> ();
+		sonido = GetComponent<AudioSource> ();
 	}
     public void Update()
     {
-        if (GameManager.tiempoTranscurrido == 0)
-            Application.LoadLevel("Final");
+		if (GameManager.tiempoTranscurrido == 0)
+			SceneManager.LoadScene ("Final");
     }
     void OnCollisionEnter(Collision col)
     {
@@ -37,7 +38,7 @@ public class ModoContrareloj : MonoBehaviour
 					GameManager.Amarillo--;
 					scriptShake.shaking = true;
 					trazo.material.color = Color.yellow;
-					audio.PlayOneShot (puntoAudio, 1F);//Rubén
+					sonido.PlayOneShot (puntoAudio, 1F);//Rubén
 	                break;
 	        	case "Azul":
                     Destroy(col.gameObject);
@@ -48,7 +49,7 @@ public class ModoContrareloj : MonoBehaviour
 					GameManager.Azul--;
 					trazo.material.color = Color.cyan;
 					scriptShake.shaking = true;
-					audio.PlayOneShot (puntoAudio, 1F);//Rubén
+					sonido.PlayOneShot (puntoAudio, 1F);//Rubén
                     break;
                 case "Rojo":
                     Destroy(col.gameObject);
@@ -59,7 +60,7 @@ public class ModoContrareloj : MonoBehaviour
 					GameManager.Rojo--;
 					scriptShake.shaking = true;
 					trazo.material.color = Color.red;
-					audio.PlayOneShot (puntoAudio, 1F);//Rubén
+					sonido.PlayOneShot (puntoAudio, 1F);//Rubén
                     break;
                 case "Fucsia":
                     Destroy(col.gameObject);
@@ -70,7 +71,7 @@ public class ModoContrareloj : MonoBehaviour
 					GameManager.Fucsia--;
 					scriptShake.shaking = true;
 					trazo.material.color = Color.magenta;
-					audio.PlayOneShot (puntoAudio, 1F);//Rubén
+					sonido.PlayOneShot (puntoAudio, 1F);//Rubén
                     break;
                 case "Blanco":
                     Destroy(col.gameObject);
@@ -81,7 +82,7 @@ public class ModoContrareloj : MonoBehaviour
 					GameManager.Blanco--;
 					scriptShake.shaking = true;
 					trazo.material.color = Color.white;
-					audio.PlayOneShot (puntoAudio, 1F);//Rubén
+					sonido.PlayOneShot (puntoAudio, 1F);//Rubén
                     break;
                 case "Verde":
                     Destroy(col.gameObject);
@@ -92,7 +93,7 @@ public class ModoContrareloj : MonoBehaviour
 					GameManager.Verde--;
 					scriptShake.shaking = true;
 					trazo.material.color = Color.green;
-					audio.PlayOneShot (puntoAudio, 1F);//Rubén
+					sonido.PlayOneShot (puntoAudio, 1F);//Rubén
                     break;
             }
         } else {
@@ -104,7 +105,7 @@ public class ModoContrareloj : MonoBehaviour
 					GameManager.Amarillo--;
 					scriptShake.shaking = true;
 					trazo.material.color = Color.yellow;
-					audio.PlayOneShot (puntoAudio, 1F);//Rubén
+					sonido.PlayOneShot (puntoAudio, 1F);//Rubén
                 }
                 if (col.gameObject.tag == "Azul" && gameObject.tag == "Azul")
                 {
@@ -114,7 +115,7 @@ public class ModoContrareloj : MonoBehaviour
 					GameManager.Azul--;
 					scriptShake.shaking = true;
 					trazo.material.color = Color.cyan;
-					audio.PlayOneShot (puntoAudio, 1F);//Rubén
+					sonido.PlayOneShot (puntoAudio, 1F);//Rubén
                 }
                 if (col.gameObject.tag == "Verde" && gameObject.tag == "Verde")
                 {
@@ -124,7 +125,7 @@ public class ModoContrareloj : MonoBehaviour
 					GameManager.Verde--;
 					scriptShake.shaking = true;
 					trazo.material.color = Color.green;
-					audio.PlayOneShot (puntoAudio, 1F);//Rubén
+					sonido.PlayOneShot (puntoAudio, 1F);//Rubén
                 }
                 if (col.gameObject.tag == "Fucsia" && gameObject.tag == "Fucsia")
                 {
@@ -134,7 +135,7 @@ public class ModoContrareloj : MonoBehaviour
 					GameManager.Fucsia--;
 					scriptShake.shaking = true;
 					trazo.material.color = Color.magenta;
-					audio.PlayOneShot (puntoAudio, 1F);//Rubén
+					sonido.PlayOneShot (puntoAudio, 1F);//Rubén
                 }
                 if (col.gameObject.tag == "Rojo" && gameObject.tag == "Rojo")
                 {
@@ -144,7 +145,7 @@ public class ModoContrareloj : MonoBehaviour
 					GameManager.Rojo--;
 					scriptShake.shaking = true;
 					trazo.material.color = Color.red;
-					audio.PlayOneShot (puntoAudio, 1F);//Rubén
+					sonido.PlayOneShot (puntoAudio, 1F);//Rubén
                 }
 	            if (col.gameObject.tag == "Blanco")
 	            {
@@ -155,7 +156,7 @@ public class ModoContrareloj : MonoBehaviour
 					GameManager.Blanco--;
 					scriptShake.shaking = true;
 					trazo.material.color = Color.white;
-					audio.PlayOneShot (puntoAudio, 1F);//Rubén
+					sonido.PlayOneShot (puntoAudio, 1F);//Rubén
 	            }
         	
     	}
